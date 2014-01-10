@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SmsKit::VERSION
   spec.authors       = ["glaszig"]
   spec.email         = ["glaszig@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{SMSKit}
+  spec.summary       = %q{Easily send text messages through SMS over HTTP providers}
   spec.homepage      = ""
   spec.license       = "All rights reserved"
 
@@ -20,4 +20,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "minitest"
+  spec.add_development_dependency "webmock", "< 1.16"
+  spec.add_development_dependency "vcr"
+
+  spec.add_dependency "faraday"
 end
