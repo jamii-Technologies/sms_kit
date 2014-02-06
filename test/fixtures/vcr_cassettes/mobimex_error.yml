@@ -1,0 +1,24 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://gate.quadra-mm.com/feed/http.asp
+    body:
+      encoding: UTF-8
+      string: ! '{"user":"user","pass":"pass","dlr":0,"xml":"json","from_number":123456,"number":null,"message":null,"idd":0,"im":0,"route":"","type":"text"}'
+    headers:
+      User-Agent:
+      - SmsKit 1.0.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers: {}
+    body:
+      encoding: UTF-8
+      string: '0'
+    http_version: 
+  recorded_at: Thu, 06 Feb 2014 04:33:20 GMT
+recorded_with: VCR 2.8.0
