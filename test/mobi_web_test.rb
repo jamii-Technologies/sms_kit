@@ -7,10 +7,10 @@ SmsKit::MobiWeb.configure do |config|
 end
 
 module SmsKit
-  class MobiWeb::MessageTest < MiniTest::Test
+  class MobiWebTest < MiniTest::Test
 
-    def setup
-      @message = SmsKit::MobiWeb::Message.new to: 12345, text: 'foo bar'
+    def text_message
+      { text: 'foo bar', to: 12345 }
     end
 
     def test_deliver
@@ -19,11 +19,11 @@ module SmsKit
       ]}
 
       VCR.use_cassette 'mobi_web_success', options do
-        assert_equal 123, @message.deliver.to_i
+        assert_equal 123, MobiWeb.deliver(text_message)
       end
 
       VCR.use_cassette 'mobi_web_error', options do
-        assert_nil @message.deliver
+        assert_nil MobiWeb.deliver
       end
     end
 

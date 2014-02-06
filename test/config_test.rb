@@ -1,7 +1,7 @@
 require 'helper'
 
-module TestProvider
-  extend SmsKit::Config
+class TestProvider
+  include SmsKit::Config
 end
 
 class ProviderTest < MiniTest::Test
@@ -14,6 +14,9 @@ class ProviderTest < MiniTest::Test
     assert_equal 'foo', TestProvider.config.username
     assert_equal 'bar', TestProvider.config.password
     assert_equal 12345, TestProvider.config.sender
+
+    instance = TestProvider.new
+    assert_equal 'foo', instance.config.username
   end
 
   def test_configure

@@ -3,15 +3,27 @@ require 'ostruct'
 module SmsKit
   module Config
 
-    def config
-      @config ||= Struct.new(:username, :password, :sender).new
+    def self.included base
+      base.extend ClassMethods
+
+      base.class_eval do
+        def config
+          self.class.config
+        end
+      end
     end
 
-    def configure
-      yield config
-    end
+    module ClassMethods
 
-    extend self
+      def config
+        @config ||= Struct.new(:username, :password, :sender).new
+      end
+
+      def configure
+        yield config
+      end
+
+    end
 
   end
 end
