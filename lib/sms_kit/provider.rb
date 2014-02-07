@@ -20,10 +20,5 @@ module SmsKit
     def deliver options = {}
       raise "#{self.class.name} needs to implement #deliver"
     end
-
-    # returns the HTTP_ENDPOINT value of the message's parent module
-    def _provider_api_url
-      self.class.const_get 'HTTP_ENDPOINT'
-    end
   end
 end

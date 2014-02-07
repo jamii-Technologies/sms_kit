@@ -4,7 +4,7 @@ module SmsKit
   module HTTP
 
     def uri
-      @uri ||= URI.parse _provider_api_url
+      @uri ||= URI.parse self.class.const_get 'HTTP_ENDPOINT'
     end
 
     def post data
