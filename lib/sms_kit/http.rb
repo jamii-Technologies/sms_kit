@@ -19,6 +19,7 @@ module SmsKit
       @conn ||= Faraday.new "#{uri.scheme}://#{uri.host}" do |f|
         f.response :logger, SmsKit.logger
         f.headers[:user_agent] = USER_AGENT
+        yield f if block_given?
       end
     end
 

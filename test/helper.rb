@@ -13,3 +13,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'test/fixtures/vcr_cassettes'
   c.hook_into :faraday
 end
+
+class ExampleProvider < SmsKit::Provider
+  HTTP_ENDPOINT = 'http://www.example.com'.freeze
+end
