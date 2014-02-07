@@ -5,6 +5,9 @@ require 'pry'
 # require 'webmock/minitest'
 require 'vcr'
 require 'sms_kit'
+require 'logger'
+
+SmsKit.logger = Logger.new '/dev/null'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'test/fixtures/vcr_cassettes'
