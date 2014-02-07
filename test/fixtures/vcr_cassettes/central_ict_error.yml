@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.de.centralict.net/controller/cgi/?type=SMS&src=123456&dst&body&uid=&pin=&subject=&call=message_sender
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - SmsKit 1.0.0
+      Authorization:
+      - Basic dXNlcjpwYXNz
+  response:
+    status:
+      code: 
+      message: 
+    headers: {}
+    body:
+      encoding: US-ASCII
+      string: ! 'initiatorNumber=
+initiatorCountry=
+initiatorArea=
+initiatorRate=0
+calleeNumber=
+calleeCountry=
+calleeArea=
+calleeRate=0.12
+sent=0'
+    http_version: 
+  recorded_at: Thu, 06 Feb 2014 22:16:51 GMT
+recorded_with: VCR 2.8.0
