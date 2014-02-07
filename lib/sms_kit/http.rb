@@ -17,7 +17,7 @@ module SmsKit
 
     def connection
       @conn ||= Faraday.new "#{uri.scheme}://#{uri.host}" do |f|
-        f.headers[:user_agent] = "SmsKit #{VERSION}"
+        f.headers[:user_agent] = USER_AGENT
       end
     end
 
