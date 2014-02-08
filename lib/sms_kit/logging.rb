@@ -5,16 +5,20 @@ module SmsKit
       @logger ||= begin
         require 'logger'
         Logger.new(STDOUT).tap do |l|
-          l.formatter ||= Logger::Formatter.new
-          l.formatter.extend Formatter
+          if l.respond_to? :formatter=
+            l.formatter ||= Logger::Formatter.new
+            l.formatter.extend Formatter
+          end
         end
       end
     end
 
     def logger= l
       @logger = l.tap do |l|
-        l.formatter ||= Logger::Formatter.new
-        l.formatter.extend Formatter
+        if l.respond_to? :formatter=
+          l.formatter ||= Logger::Formatter.new
+          l.formatter.extend Formatter
+        end
       end
     end
 
