@@ -16,9 +16,10 @@ module SmsKit
     end
 
     def connection
-      @conn ||= Faraday.new "#{uri.scheme}://#{uri.host}" do |f|
-        f.response :logger, SmsKit.logger
+      @conn ||= Faraday.new "#{uri.scheme}://#{uri.host}", ssl: { verify: false } do |f|
         f.headers[:user_agent] = USER_AGENT
+        f.response :logger, SmsKit.logger
+        f.adapter Faraday.default_adapter
         yield f if block_given?
       end
     end
