@@ -14,7 +14,6 @@ module SmsKit
     def params
       {
         type:    'SMS',
-        src:     data[:from],
         src:     data[:from] || config.sender,
         dst:     data[:to],
         body:    data[:text],
