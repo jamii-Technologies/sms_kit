@@ -48,4 +48,7 @@ module SmsKit
     end
 
   end
+
+  register mobimex: Mobimex
+
 end

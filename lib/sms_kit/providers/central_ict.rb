@@ -30,4 +30,7 @@ module SmsKit
     end
 
   end
+
+  register central_ict: CentralICT
+
 end

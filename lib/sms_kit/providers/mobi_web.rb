@@ -25,4 +25,7 @@ module SmsKit
     end
 
   end
+
+  register mobi_web: MobiWeb
+
 end
