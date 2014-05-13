@@ -16,4 +16,13 @@ class ProviderTest < MiniTest::Test
     end
   end
 
+  def test_error
+    provider = ExampleProvider.new
+    provider.instance_variable_set :@error_code, 123
+    provider.instance_variable_set :@error_message, 'holy crap'
+
+    assert_equal 123, provider.error_code
+    assert_equal 'holy crap', provider.error_message
+  end
+
 end

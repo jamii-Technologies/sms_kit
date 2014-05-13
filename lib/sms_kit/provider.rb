@@ -6,7 +6,7 @@ module SmsKit
     include SmsKit::Config
     include SmsKit::HTTP
 
-    attr_reader :data
+    attr_reader :data, :error_code, :error_message
 
     def self.deliver options = {}, &block
       new(options, &block).deliver
