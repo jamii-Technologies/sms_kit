@@ -24,6 +24,7 @@ Or install it yourself as:
 You can store arbitrary options in a provider's configuration:
 
 ```
+require 'sms_kit/providers/mobi_web'
 SmsKit::MobiWeb.configure do |config|
   config.username = 'user'
   config.password = 'pass'

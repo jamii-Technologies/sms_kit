@@ -10,5 +10,3 @@ module SmsKit
 
   USER_AGENT = "SmsKit #{VERSION}"
 end
-
-require 'sms_kit/providers'
