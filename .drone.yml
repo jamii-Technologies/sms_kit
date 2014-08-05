@@ -1,0 +1,10 @@
+image: drone/ruby
+env:
+  - RAILS_ENV=test
+cache:
+  - /tmp/bundler
+script:
+  - sudo chown -R ubuntu:ubuntu /tmp/bundler
+  - sudo chmod -R ug+rw /tmp/bundler
+  - bundle install --quiet --path /tmp/bundler
+  - bundle exec rake test
