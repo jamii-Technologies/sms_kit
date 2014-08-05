@@ -1,6 +1,8 @@
 module SmsKit
   module Logging
 
+    attr_accessor :logger
+
     def logger
       @logger ||= begin
         require 'logger'
@@ -9,15 +11,6 @@ module SmsKit
             l.formatter ||= Logger::Formatter.new
             l.formatter.extend Formatter
           end
-        end
-      end
-    end
-
-    def logger= l
-      @logger = l.tap do |l|
-        if l.respond_to? :formatter=
-          l.formatter ||= Logger::Formatter.new
-          l.formatter.extend Formatter
         end
       end
     end
