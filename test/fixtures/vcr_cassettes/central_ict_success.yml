@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.de.centralict.net/controller/cgi/?type=SMS&src=123456&dst=12345&body=foo+bar&uid=&pin=&subject=&call=message_sender
+    uri: http://api.de.centralict.net/controller/cgi/?body=foo+bar&call=message_sender&dst=12345&pin=&src=123456&subject=&type=SMS&uid=
     body:
       encoding: US-ASCII
       string: ''
