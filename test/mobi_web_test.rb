@@ -1,4 +1,5 @@
 require 'helper'
+require 'sms_kit/providers/mobi_web'
 
 SmsKit::MobiWeb.configure do |config|
   config.username = 'user'

@@ -1,4 +1,5 @@
 require 'helper'
+require 'sms_kit/providers/mobimex'
 
 SmsKit::Mobimex.configure do |config|
   config.username = 'user'

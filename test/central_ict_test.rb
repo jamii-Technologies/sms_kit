@@ -1,4 +1,5 @@
 require 'helper'
+require 'sms_kit/providers/central_ict'
 
 SmsKit::CentralICT.configure do |config|
   config.username = 'user'
