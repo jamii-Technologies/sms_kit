@@ -41,7 +41,7 @@ module SmsKit
         originator: data[:from] || config.sender,
         phone:      data[:to],
         msgtext:    data[:text],
-        showDLR:    1
+        showDLR:    data[:dlr] || 1
       }
     end
 
