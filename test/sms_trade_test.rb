@@ -19,13 +19,13 @@ module SmsKit
     end
 
     def test_deliver
-      VCR.use_cassette 'sms_trade_success', vcr_options do
+      VCR.use_cassette 'sms_trade/success', vcr_options do
         assert_equal 123456789, SmsTrade.deliver(text_message)
       end
     end
 
     def test_error
-      VCR.use_cassette 'sms_trade_error', vcr_options do
+      VCR.use_cassette 'sms_trade/failure', vcr_options do
         provider = SmsTrade.new
         assert_nil provider.deliver
         assert_equal 10, provider.error_code

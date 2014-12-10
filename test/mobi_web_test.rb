@@ -21,13 +21,13 @@ module SmsKit
     end
 
     def test_deliver
-      VCR.use_cassette 'mobi_web_success', vcr_options do
+      VCR.use_cassette 'mobi_web/success', vcr_options do
         assert_equal 123, MobiWeb.deliver(text_message)
       end
     end
 
     def test_error
-      VCR.use_cassette 'mobi_web_error', vcr_options do
+      VCR.use_cassette 'mobi_web/failure', vcr_options do
         provider = MobiWeb.new
         assert_nil provider.deliver
         assert_equal 100, provider.error_code
