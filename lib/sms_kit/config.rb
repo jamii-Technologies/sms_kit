@@ -13,10 +13,24 @@ module SmsKit
       end
     end
 
+    class Store < Hash
+      def method_missing meth, *args
+        unless respond_to? meth
+          if key = meth.to_s[/(.*)=$/, 1]
+            self[key.to_sym] = args.first
+          else
+            self[meth.to_sym]
+          end
+        else
+          super
+        end
+      end
+    end
+
     module ClassMethods
 
       def config
-        @config ||= Struct.new(:username, :password, :sender).new
+        @config ||= Store.new
       end
 
       def configure
