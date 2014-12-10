@@ -11,13 +11,13 @@ module SmsKit
   class MobimexTest < MiniTest::Test
 
     def test_deliver
-      VCR.use_cassette 'mobimex_success' do
+      VCR.use_cassette 'mobimex/success' do
         assert Mobimex.deliver text: 'foo bar', to: 12345
       end
     end
 
     def test_deliver_fails
-      VCR.use_cassette 'mobimex_error' do
+      VCR.use_cassette 'mobimex/failure' do
         assert ! Mobimex.deliver, "Mobimex delivery should have failed"
       end
     end
