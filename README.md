@@ -55,6 +55,7 @@ puts result // 1234
 - CentralICT -- [www.centralict.com](http://www.centralict.com/)
 - MobiWeb -- [mobile-sms.biz](http://mobile-sms.biz/)
 - Mobimex -- [www.mobimex.com](http://www.mobimex.com/)
+- smstrade -- [www.smstrade.de](http://www.smstrade.eu/)
 
 ## Contributing
 
