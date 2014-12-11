@@ -49,6 +49,7 @@ module SmsKit
     def params
       default_params.merge(params_from_data).tap do |p|
         p[:message_id] ||= 1
+        p[:message]    ||= data[:text]
       end
     end
 
