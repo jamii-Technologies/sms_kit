@@ -18,6 +18,14 @@ module SmsKit
       { text: 'foo bar', to: 12345, debug: 1 }
     end
 
+    def test_params
+      message = SmsTrade.new text_message
+      assert_equal text_message[:to], message.params[:to]
+      assert_equal SmsTrade.config.sender, message.params[:from]
+      assert_equal text_message[:text], message.params[:message]
+      assert_equal SmsTrade::ROUTE_BASIC, message.params[:route]
+    end
+
     def test_deliver
       VCR.use_cassette 'sms_trade/success', vcr_options do
         assert_equal 123456789, SmsTrade.deliver(text_message)
