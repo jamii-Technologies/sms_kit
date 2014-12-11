@@ -4,6 +4,8 @@ require 'json'
 module SmsKit
   class Mobimex < Provider
 
+    ROUTE_AFRICA = 'AFRIKA'.freeze
+
     HTTP_ENDPOINT = 'https://gate.quadra-mm.com/feed/http.asp'
     RESPONSE_FORMATS = { text: 0, xml: 1, json: 2 }
 
@@ -30,9 +32,9 @@ module SmsKit
         message:     data[:text],
         idd:         data[:idd] || 0,
         im:          data[:im] || 0,
-        route:       data[:route] || '',
+        route:       data[:route] || config.route,
         type:        data[:type] || 'text'
-      }
+      }.reject { |k, v| v.nil? }
     end
 
     def response_format
