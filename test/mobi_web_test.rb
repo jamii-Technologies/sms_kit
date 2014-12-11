@@ -20,6 +20,14 @@ module SmsKit
       { text: 'foo bar', to: 12345 }
     end
 
+    def test_params
+      message = MobiWeb.new text_message
+      assert_equal text_message[:to], message.params[:phone]
+      assert_equal MobiWeb.config.sender, message.params[:originator]
+      assert_equal text_message[:text], message.params[:msgtext]
+      assert_equal 1, message.params[:showDLR]
+    end
+
     def test_deliver
       VCR.use_cassette 'mobi_web/success', vcr_options do
         assert_equal 123, MobiWeb.deliver(text_message)
