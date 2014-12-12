@@ -18,15 +18,16 @@ http_interactions:
     headers: {}
     body:
       encoding: US-ASCII
-      string: ! 'initiatorNumber=491707304849
-initiatorCountry=DE
-initiatorArea=MOBILE
-initiatorRate=0
-calleeNumber=491707304849
-calleeCountry=DE
-calleeArea=MOBILE
-calleeRate=0.12
-sent=1'
+      string: |
+        initiatorNumber=491707304849
+        initiatorCountry=DE
+        initiatorArea=MOBILE
+        initiatorRate=0
+        calleeNumber=491707304849
+        calleeCountry=DE
+        calleeArea=MOBILE
+        calleeRate=0.12
+        sent=1
     http_version: 
   recorded_at: Thu, 06 Feb 2014 22:16:51 GMT
 recorded_with: VCR 2.8.0
