@@ -50,6 +50,21 @@ result   = provider.deliver
 puts result // 1234
 ```
 
+#### Error handling
+
+SmsKit will throw a `SmsKit::DeliveryError` if something goes wrong.
+Though it depends on the specific provider this generally happens
+upon authentication errors as well as returned error codes from the web service.
+
+```
+begin
+  provider = :provider_symbol
+  SmsKit.deliver text: 'hello world', to: '...', provider: provider
+rescue SmsKit::DeliveryError => e
+  logger.error e
+end
+```
+
 ## Packaged providers
 
 - CentralICT -- [www.centralict.com](http://www.centralict.com/)

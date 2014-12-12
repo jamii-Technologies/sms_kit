@@ -6,9 +6,15 @@ module SmsKit
     HTTP_ENDPOINT = 'http://api.de.centralict.net/controller/cgi/'
 
     def deliver
-      response = get params
-      status = response.body.split('=').last
-      status.to_i == 1
+      response        = get params
+      parsed_response = parse response.body
+      status          = parsed_response['sent']
+
+      if 1 != status.to_i
+        raise DeliveryError, "Delivery failed (#{status})"
+      else
+        true
+      end
     end
 
     def params
@@ -27,6 +33,10 @@ module SmsKit
     def get payload
       connection.basic_auth config.username, config.password
       super
+    end
+
+    def parse string
+      Hash[string.scan /(\w+)=(.*)/]
     end
 
   end

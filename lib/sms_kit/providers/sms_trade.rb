@@ -28,9 +28,7 @@ module SmsKit
       response = post URI.encode_www_form params
 
       if 'ERROR_LOGIN' == response.body
-        @error_code = 50
-        @error_message = ERROR_CODES[50]
-        return
+        raise DeliveryError, "Login failed (ERROR_LOGIN)"
       end
 
       parsed_response = response.body.split "\n"
@@ -40,9 +38,7 @@ module SmsKit
       if '100' == status
         message_id.to_i
       else
-        @error_code = status.to_i
-        @error_message = ERROR_CODES[status.to_i]
-        nil
+        raise DeliveryError, "#{ERROR_CODES[status.to_i]} (#{status})"
       end
     end
 

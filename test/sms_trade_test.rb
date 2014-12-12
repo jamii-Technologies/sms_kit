@@ -35,9 +35,8 @@ module SmsKit
     def test_error
       VCR.use_cassette 'sms_trade/failure', vcr_options do
         provider = SmsTrade.new
-        assert_nil provider.deliver
-        assert_equal 10, provider.error_code
-        assert_equal 'Receiver number not valid', provider.error_message
+        error = assert_raises(SmsKit::DeliveryError) { provider.deliver }
+        assert_match /Receiver number not valid \(10\)/, error.message
       end
     end
 
