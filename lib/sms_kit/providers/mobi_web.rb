@@ -27,8 +27,7 @@ module SmsKit
       code     = response.body[/([a-z]+)(\d+)?/i, 2]
 
       if 'ERROR' == status
-        @error_code = code.to_i
-        @error_message = ERROR_CODES[code.to_i]
+        raise DeliveryError, "#{ERROR_CODES[code.to_i]} (#{code})"
       end
 
       status == "OK" ? code.to_i : nil

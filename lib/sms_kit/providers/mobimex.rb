@@ -17,7 +17,7 @@ module SmsKit
         json = JSON.parse(response.body)
         json['result'].to_i == 1
       else
-        nil
+        raise DeliveryError, "Delivery failed (#{response.body})"
       end
     end
 

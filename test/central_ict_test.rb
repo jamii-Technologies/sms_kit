@@ -31,7 +31,8 @@ module SmsKit
 
     def test_deliver_fails
       VCR.use_cassette 'central_ict/failure' do
-        assert ! CentralICT.deliver, "Mobimex delivery should have failed"
+        error = assert_raises(SmsKit::DeliveryError) { CentralICT.deliver }
+        assert_match /Delivery failed/, error.message
       end
     end
 
