@@ -1,4 +1,4 @@
-# SmsKit [![Build Status](http://ci.jamii.biz:8080/api/badge/github.com/jamii-Technologies/sms_kit/status.svg?branch=master)](http://ci.jamii.biz:8080/github.com/jamii-Technologies/sms_kit)
+# SmsKit [![Build Status](http://ci.jamii.biz/api/badge/github.com/jamii-Technologies/sms_kit/status.svg?branch=master)](http://ci.jamii.biz/github.com/jamii-Technologies/sms_kit)
 
 Easily send text messages via an HTTP SMS gateway.  
 The goal is to offer one streamlined API for any provider adapter.
