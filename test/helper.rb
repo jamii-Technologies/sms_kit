@@ -1,3 +1,4 @@
+$:.unshift File.expand_path('../../lib', __FILE__)
 
 if ENV['COV']
   require 'simplecov'
@@ -5,7 +6,6 @@ if ENV['COV']
 end
 
 require 'minitest/autorun'
-require 'minitest/pride'
 require 'pry'
 require 'vcr'
 require 'sms_kit'
