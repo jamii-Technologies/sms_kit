@@ -7,7 +7,6 @@ end
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
-# require 'webmock/minitest'
 require 'vcr'
 require 'sms_kit'
 require 'logger'
