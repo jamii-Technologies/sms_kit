@@ -58,10 +58,11 @@ module SmsKit
 
     def default_params
       {
-        key:   config.gateway_key,
-        from:  config.sender,
-        route: config.route,
-        dlr:   1
+        key:    config.gateway_key,
+        from:   config.sender,
+        route:  config.route,
+        concat: 1,
+        dlr:    1
       }
     end
 
