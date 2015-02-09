@@ -3,7 +3,8 @@ require 'sms_kit/provider'
 module SmsKit
   class MobiWeb < Provider
 
-    HTTP_ENDPOINT = "http://217.118.27.5/bulksms/bulksend.go"
+    # http://api2.solutions4mobiles.com/bulksms/bulksend.go?msgtext=&originator=&password=mobiweb-pass&phone=491231234567&showDLR=1&username=mail@example.com
+    HTTP_ENDPOINT = "https://api2.solutions4mobiles.com/bulksms/bulksend.go"
 
     ERROR_CODES = {
       100 => 'Temporary Internal Server Error. Try again later',

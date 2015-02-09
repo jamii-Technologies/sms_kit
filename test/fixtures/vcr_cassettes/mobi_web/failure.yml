@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://217.118.27.5/bulksms/bulksend.go?msgtext=&originator=123456&password=pass&phone=&showDLR=1&username=user
+    uri: https://api2.solutions4mobiles.com/bulksms/bulksend.go?msgtext=&originator=123456&password=pass&phone=&showDLR=1&username=user
     body:
       encoding: US-ASCII
       string: ''
