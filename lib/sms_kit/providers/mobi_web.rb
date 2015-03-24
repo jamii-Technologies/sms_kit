@@ -35,14 +35,16 @@ module SmsKit
     end
 
     def params
+      _data = data.dup
       {
         username:   config.username,
         password:   config.password,
-        originator: data[:from] || config.sender,
-        phone:      data[:to],
-        msgtext:    data[:text],
-        showDLR:    data[:dlr] || 1
-      }
+        originator: _data.delete(:from) || config.sender,
+        phone:      _data.delete(:to),
+        msgtext:    _data.delete(:text),
+        showDLR:    _data.delete(:dlr) || 1,
+        charset:    _data.delete(:charset) || 8
+      }.merge _data
     end
 
   end
