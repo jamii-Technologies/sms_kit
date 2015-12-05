@@ -3,7 +3,7 @@ build:
   environment:
     - RAILS_ENV=test
   commands:
-    - bundle install --quiet --path /tmp/bundler
+    - bundle install --quiet --path build/bundle
     - bundle exec rake test
 
 cache:
