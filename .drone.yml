@@ -1,10 +1,19 @@
-image: drone/ruby
-env:
-  - RAILS_ENV=test
+build:
+  image: ruby:$$RUBY_VERSION
+  environment:
+    - RAILS_ENV=test
+  commands:
+    - bundle install --quiet --path /tmp/bundler
+    - bundle exec rake test
+
 cache:
-  - /tmp/bundler
-script:
-  - sudo chown -R ubuntu:ubuntu /tmp/bundler
-  - sudo chmod -R ug+rw /tmp/bundler
-  - bundle install --quiet --path /tmp/bundler
-  - bundle exec rake test
+  mount:
+    - build/bundle
+    - .git
+
+matrix:
+  RUBY_VERSION:
+    - 2.2.0
+    - 2.2.1
+    - 2.2.2
+    - 2.2.3
