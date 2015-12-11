@@ -1,13 +1,12 @@
 module SmsKit
   module Delivery
 
-    def deliver options, &block
-      provider = options.delete :provider
+    def deliver provider, options, &block
       unless klass = providers[provider.to_sym]
         raise "SMS provider #{provider} not known"
       end
 
-      klass.new(options, &block).deliver
+      klass.deliver options, &block
     end
 
   end

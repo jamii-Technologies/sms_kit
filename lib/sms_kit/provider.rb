@@ -9,6 +9,7 @@ module SmsKit
     attr_reader :data, :error_code, :error_message
 
     def self.deliver options = {}, &block
+      options = options.to_sms if options.respond_to? :to_sms
       new(options, &block).deliver
     end
 

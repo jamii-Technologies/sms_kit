@@ -50,6 +50,32 @@ result   = provider.deliver
 puts result // 1234
 ```
 
+### Sending "Objects"
+
+If your class responds to `to_sms`, you can send it itself:
+
+```rb
+class TextMessage
+  def to_sms
+    {
+      to: 491231234567
+      text: 'hello world'
+    }
+  end
+end
+
+SmsKit.deliver :provider_name, TextMessage.new
+
+# or on a provider level
+
+class MyProvider < SmsKit::Provider
+  # ...
+end
+
+MyProvider.deliver TextMessage.new
+
+```
+
 #### Error handling
 
 SmsKit will throw a `SmsKit::DeliveryError` if something goes wrong.
@@ -59,7 +85,7 @@ upon authentication errors as well as returned error codes from the web service.
 ```
 begin
   provider = :provider_symbol
-  SmsKit.deliver text: 'hello world', to: '...', provider: provider
+  SmsKit.deliver provider, text: 'hello world', to: '...'
 rescue SmsKit::DeliveryError => e
   logger.error e
 end

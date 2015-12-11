@@ -22,3 +22,9 @@ require 'sms_kit/provider'
 class ExampleProvider < SmsKit::Provider
   HTTP_ENDPOINT = 'http://www.example.com'.freeze
 end
+
+class StubSms
+  def to_sms
+    { to: 123456789, text: 'hello world' }
+  end
+end

@@ -1,4 +1,16 @@
 require 'helper'
+require 'sms_kit/provider'
+
+class StubProvider < SmsKit::Provider
+  HTTP_ENDPOINT = 'http://api.example.com'.freeze
+
+  def deliver options = {}
+    response = post data.to_json
+    response.status.to_i == 200 ? response.body : false
+  end
+end
+
+SmsKit.register stub_provider: StubProvider
 
 class ProviderTest < MiniTest::Test
 
@@ -23,6 +35,15 @@ class ProviderTest < MiniTest::Test
 
     assert_equal 123, provider.error_code
     assert_equal 'holy crap', provider.error_message
+  end
+
+  def test_to_sms
+    VCR.use_cassette 'stub_provider/success', match_requests_on: [ :uri, :body ] do
+      object = StubSms.new
+
+      result = StubProvider.deliver object
+      assert 123, result.to_i
+    end
   end
 
 end

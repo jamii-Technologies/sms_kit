@@ -1,0 +1,22 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.example.com/
+    body:
+      encoding: UTF-8
+      string: '{"to":123456789,"text":"hello world"}'
+    headers:
+      User-Agent:
+      - SmsKit 1.0.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers: {}
+    body:
+      encoding: UTF-8
+      string: '123'
+    http_version: 
+  recorded_at: Thu, 11 Dec 2015 03:26:51 GMT
+recorded_with: VCR 2.8.0
