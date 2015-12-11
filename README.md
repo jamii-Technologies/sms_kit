@@ -23,7 +23,7 @@ Or install it yourself as:
 
 You can store arbitrary options in a provider's configuration:
 
-```
+```rb
 require 'sms_kit/providers/mobi_web'
 SmsKit::MobiWeb.configure do |config|
   config.username = 'user'
@@ -36,13 +36,13 @@ end
 
 Quickly:
 
-```
+```rb
 SmsKit::MobiWeb.deliver text: 'Hello World.', to: 491231234567
 ```
 
 Detailed:
 
-```
+```rb
 provider = SmsKit::MobiWeb.new text: 'Hello World.', to: 491231234567
 result   = provider.deliver
 
@@ -82,7 +82,7 @@ SmsKit will throw a `SmsKit::DeliveryError` if something goes wrong.
 Though it depends on the specific provider this generally happens
 upon authentication errors as well as returned error codes from the web service.
 
-```
+```rb
 begin
   provider = :provider_symbol
   SmsKit.deliver provider, text: 'hello world', to: '...'
