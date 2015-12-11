@@ -91,6 +91,15 @@ rescue SmsKit::DeliveryError => e
 end
 ```
 
+## Common SMS options
+
+Which options the `#deliver` method expects generallly depends on provider implementation.
+However, core providers expect the following options, at least:
+
+- `:to` The number to send the message to
+- `:from` The sender ID
+- `:text` The text message
+
 ## Packaged providers
 
 - CentralICT -- [www.centralict.com](http://www.centralict.com/)
