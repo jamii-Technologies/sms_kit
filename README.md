@@ -34,20 +34,18 @@ end
 
 ### Send text message
 
-Quickly:
-
-```rb
-SmsKit::MobiWeb.deliver text: 'Hello World.', to: 491231234567
-```
-
-Detailed:
-
 ```rb
 provider = SmsKit::MobiWeb.new text: 'Hello World.', to: 491231234567
 result   = provider.deliver
 
 # returns the message id from MobiWeb or nil if something went wrong
 puts result // 1234
+```
+
+There's also a short version:
+
+```rb
+SmsKit::MobiWeb.deliver text: 'Hello World.', to: 491231234567
 ```
 
 ### Sending "Objects"
