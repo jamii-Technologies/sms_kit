@@ -1,4 +1,6 @@
-# SmsKit [![Build Status](https://travis-ci.org/jamii-Technologies/sms_kit.svg?branch=master)](https://travis-ci.org/jamii-Technologies/sms_kit)
+# SmsKit
+[![Gem Version](https://badge.fury.io/rb/sms_kit.svg)](https://badge.fury.io/rb/sms_kit)
+[![Build Status](https://travis-ci.org/jamii-Technologies/sms_kit.svg?branch=master)](https://travis-ci.org/jamii-Technologies/sms_kit)
 
 Easily send text messages via an HTTP SMS gateway.  
 The goal is to offer one streamlined API for any provider adapter.
