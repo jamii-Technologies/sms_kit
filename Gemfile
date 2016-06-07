@@ -7,5 +7,3 @@ group :development do
   gem 'pry', require: false
   gem 'simplecov', require: false
 end
-
-gem 'rake', group: :test
