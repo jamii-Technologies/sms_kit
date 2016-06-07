@@ -32,7 +32,7 @@ module SmsKit
     def test_deliver_fails
       VCR.use_cassette 'central_ict/failure' do
         error = assert_raises(SmsKit::DeliveryError) { CentralICT.deliver }
-        assert_match /Delivery failed/, error.message
+        assert_match %r{Delivery failed}, error.message
       end
     end
 

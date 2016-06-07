@@ -32,7 +32,7 @@ module SmsKit
     def test_deliver_fails
       VCR.use_cassette 'mobimex/failure' do
         error = assert_raises(SmsKit::DeliveryError) { Mobimex.deliver }
-        assert_match /Delivery failed/, error.message
+        assert_match %r{Delivery failed}, error.message
       end
     end
 

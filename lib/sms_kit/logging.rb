@@ -3,7 +3,7 @@ require 'logger'
 module SmsKit
   module Logging
 
-    attr_accessor :logger
+    attr_writer :logger
 
     def logger
       @logger ||= begin

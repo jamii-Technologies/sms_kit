@@ -36,7 +36,7 @@ module SmsKit
     end
 
     def parse string
-      Hash[string.scan /(\w+)=(.*)/]
+      Hash[string.scan %r{(\w+)=(.*)}]
     end
 
   end

@@ -38,7 +38,7 @@ module SmsKit
       VCR.use_cassette 'mobi_web/failure', vcr_options do
         provider = MobiWeb.new
         error = assert_raises(SmsKit::DeliveryError) { provider.deliver }
-        assert_match /Temporary Internal Server Error. Try again later \(100\)/, error.message
+        assert_match %r{Temporary Internal Server Error. Try again later \(100\)}, error.message
       end
     end
 
