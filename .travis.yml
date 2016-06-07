@@ -13,3 +13,4 @@ deploy:
   on:
     tags: true
     repo: jamii-Technologies/sms_kit
+    rvm: 2.3.1
