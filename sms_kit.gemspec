@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = SmsKit::VERSION
   spec.authors       = ["glaszig"]
   spec.email         = ["glaszig@gmail.com"]
-  spec.description   = %q{SMSKit}
   spec.summary       = %q{Easily send text messages through SMS over HTTP providers}
-  spec.homepage      = ""
-  spec.license       = "All rights reserved"
+  spec.description   = %q{SmsKit offers a streamlined API for sending text messages through any supported provider.}
+  spec.homepage      = "https://github.com/jamii-Technologies/sms_kit"
+  spec.license       = "MIT"
 
   spec.files         = Dir['{lib,test}/**/*'] + ['README.md', 'Rakefile']
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
