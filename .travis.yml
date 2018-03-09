@@ -7,6 +7,9 @@ rvm:
   - 2.4.3
   - 2.5.0
   - ruby-head
+matrix:
+  allow_failures:
+    - rvm: ruby-head
 before_install:
   - gem update --system
   - gem update bundler
