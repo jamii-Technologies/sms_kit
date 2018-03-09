@@ -9,6 +9,7 @@ rvm:
   - ruby-head
 before_install:
   - gem update --system
+  - gem update bundler
 deploy:
   provider: rubygems
   api_key:
