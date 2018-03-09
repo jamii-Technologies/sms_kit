@@ -42,8 +42,7 @@ module SmsKit
         originator: _data.delete(:from) || config.sender,
         phone:      _data.delete(:to),
         msgtext:    _data.delete(:text),
-        showDLR:    _data.delete(:dlr) || 1,
-        charset:    _data.delete(:charset) || 8
+        showDLR:    _data.delete(:dlr) || 1
       }.merge _data
     end
 
