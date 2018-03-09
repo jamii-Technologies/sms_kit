@@ -16,7 +16,7 @@ module SmsKit
     end
 
     def connection
-      @conn ||= Faraday.new "#{uri.scheme}://#{uri.host}", ssl: { verify: false } do |f|
+      @conn ||= Faraday.new "#{uri.scheme}://#{uri.host}", ssl: { verify: true } do |f|
         f.headers[:user_agent] = USER_AGENT
         f.response :logger, SmsKit.logger
         f.adapter Faraday.default_adapter
