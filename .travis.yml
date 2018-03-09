@@ -2,8 +2,10 @@ sudo: false
 language: ruby
 cache: bundler
 rvm:
-  - 2.2.5
-  - 2.3.1
+  - 2.2.9
+  - 2.3.6
+  - 2.4.3
+  - 2.5.0
   - ruby-head
 deploy:
   provider: rubygems
@@ -13,4 +15,4 @@ deploy:
   on:
     tags: true
     repo: jamii-Technologies/sms_kit
-    rvm: 2.3.1
+    rvm: 2.5.0
