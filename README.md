@@ -9,7 +9,7 @@ The goal is to offer one streamlined API for any provider adapter.
 
 Add this line to your application's Gemfile:
 
-    gem 'sms_kit', github: 'jamii-Technologies/sms_kit'
+    gem 'sms_kit'
 
 And then execute:
 
@@ -74,6 +74,26 @@ end
 
 MyProvider.deliver TextMessage.new
 
+```
+
+### Custom Provider
+
+```rb
+class MyProvider < SmsKit::Provider
+  # default url that the built-in http client will use
+  HTTP_ENDPOINT = 'https://www.example.com'.freeze
+
+  # ...
+
+  # custom connection configuration
+  # the default implementation (`super`) accepts a block
+  # which yields you a faraday instance
+  def connection
+    super do |conn|
+      conn.headers[:user_agent] = 'custom user agent'
+    end
+  end
+end
 ```
 
 #### Error handling
