@@ -1,5 +1,9 @@
 ## SmsKit changelog
 
+### 1.4.1
+
+- testing on ruby 2.7
+
 ### 1.4.0
 
 - enforcing tls connections
