@@ -20,6 +20,10 @@ end
 
 require 'sms_kit/provider'
 class ExampleProvider < SmsKit::Provider
+  HTTP_ENDPOINT = 'https://www.example.com'.freeze
+end
+
+class InsecureProvider < SmsKit::Provider
   HTTP_ENDPOINT = 'http://www.example.com'.freeze
 end
 

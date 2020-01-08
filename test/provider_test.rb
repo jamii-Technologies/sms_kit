@@ -2,7 +2,7 @@ require 'helper'
 require 'sms_kit/provider'
 
 class StubProvider < SmsKit::Provider
-  HTTP_ENDPOINT = 'http://api.example.com'.freeze
+  HTTP_ENDPOINT = 'https://api.example.com'.freeze
 
   def deliver options = {}
     response = post data.to_json

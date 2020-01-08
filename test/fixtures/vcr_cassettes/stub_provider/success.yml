@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://api.example.com/
+    uri: https://api.example.com/
     body:
       encoding: UTF-8
       string: '{"to":123456789,"text":"hello world"}'

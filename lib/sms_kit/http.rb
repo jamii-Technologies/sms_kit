@@ -18,7 +18,11 @@ module SmsKit
     end
 
     def connection
-      @conn ||= Faraday.new "#{uri.scheme}://#{uri.host}", ssl: { verify: true } do |f|
+      if 'https' != uri.scheme
+        warn "[SmsKit] Provider '#{self.class.name}' is using an unencrypted connection: #{uri}"
+      end
+
+      @conn ||= Faraday.new "#{uri.scheme}://#{uri.host}" do |f|
         f.headers[:user_agent] = USER_AGENT
         f.response :logger, SmsKit.logger
         f.adapter Faraday.default_adapter

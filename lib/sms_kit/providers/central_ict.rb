@@ -3,7 +3,7 @@ require 'sms_kit/provider'
 module SmsKit
   class CentralICT < Provider
 
-    HTTP_ENDPOINT = 'http://api.de.centralict.net/controller/cgi/'
+    HTTP_ENDPOINT = 'https://api.de.centralict.net/controller/cgi/'
 
     def deliver
       response        = get params
