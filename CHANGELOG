@@ -1,5 +1,11 @@
 ## SmsKit changelog
 
+### 1.5.0
+
+- upgraded dependencies, faraday to 1.0
+- improved default user agent
+- use https in centralict provider, spit a warning if a provider does not use https
+
 ### 1.4.1
 
 - testing on ruby 2.7
