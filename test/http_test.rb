@@ -3,7 +3,7 @@ require 'helper'
 class MockProvider < ExampleProvider
   def connection
     super do |conn|
-      conn.headers[:user_agent] = 'customer user agent'
+      conn.headers[:user_agent] = 'custom user agent'
     end
   end
 end
@@ -18,7 +18,7 @@ class HttpTest < MiniTest::Test
 
   def test_connection_config
     conn = @mock.connection
-    assert_equal 'customer user agent', conn.headers[:user_agent]
+    assert_equal 'custom user agent', conn.headers[:user_agent]
   end
 
   def test_default_user_agent
