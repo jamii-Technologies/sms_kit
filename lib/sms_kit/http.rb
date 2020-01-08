@@ -1,7 +1,9 @@
+require 'sms_kit/version'
 require 'faraday'
 
 module SmsKit
   module HTTP
+    USER_AGENT = "SmsKit/#{VERSION} (https://rubygems.org/gems/sms_kit)"
 
     def uri
       @uri ||= URI.parse self.class.const_get 'HTTP_ENDPOINT'

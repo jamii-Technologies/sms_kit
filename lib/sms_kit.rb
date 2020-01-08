@@ -10,6 +10,4 @@ module SmsKit
   extend Logging
 
   class DeliveryError < StandardError; end
-
-  USER_AGENT = "SmsKit #{VERSION}"
 end
