@@ -8,7 +8,7 @@ SmsKit::CentralICT.configure do |config|
 end
 
 module SmsKit
-  class CentralICTTest < MiniTest::Test
+  class CentralICTTest < Minitest::Test
 
     def text_message
       { text: 'foo bar', to: 12345 }

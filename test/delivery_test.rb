@@ -1,6 +1,6 @@
 require 'helper'
 
-class DeliveryTest < MiniTest::Test
+class DeliveryTest < Minitest::Test
 
   def test_delivery
     VCR.use_cassette 'mobi_web/quick_deliver' do

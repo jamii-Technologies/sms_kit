@@ -3,7 +3,7 @@ require 'logger'
 
 class MockLogger < Logger; end
 
-class LoggingTest < MiniTest::Test
+class LoggingTest < Minitest::Test
 
   def teardown
     SmsKit.logger = Logger.new '/dev/null'

@@ -8,7 +8,7 @@ SmsKit::MobiWeb.configure do |config|
 end
 
 module SmsKit
-  class MobiWebTest < MiniTest::Test
+  class MobiWebTest < Minitest::Test
 
     def vcr_options
       { match_requests_on: [

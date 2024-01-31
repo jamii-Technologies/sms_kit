@@ -2,7 +2,7 @@ require 'helper'
 
 class Foo; end
 
-class UtilsTest < MiniTest::Test
+class UtilsTest < Minitest::Test
 
   def test_register
     SmsKit.register foo: Foo

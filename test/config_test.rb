@@ -4,7 +4,7 @@ class TestProvider
   include SmsKit::Config
 end
 
-class ConfigTest < MiniTest::Test
+class ConfigTest < Minitest::Test
 
   def test_config
     TestProvider.config.username = 'foo'

@@ -9,7 +9,7 @@ SmsKit::Mobimex.configure do |config|
 end
 
 module SmsKit
-  class MobimexTest < MiniTest::Test
+  class MobimexTest < Minitest::Test
 
     def text_message
       { text: 'foo bar', to: 12345, from: 6789 }

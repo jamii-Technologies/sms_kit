@@ -8,7 +8,7 @@ SmsKit::SmsTrade.configure do |config|
 end
 
 module SmsKit
-  class SmsTradeTest < MiniTest::Test
+  class SmsTradeTest < Minitest::Test
 
     def vcr_options
       { match_requests_on: [ VCR.request_matchers.uri_without_params(:key) ] }

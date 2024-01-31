@@ -12,7 +12,7 @@ end
 
 SmsKit.register stub_provider: StubProvider
 
-class ProviderTest < MiniTest::Test
+class ProviderTest < Minitest::Test
 
   def test_takes_options
     assert_equal :bar, ExampleProvider.new(foo: :bar).data[:foo]

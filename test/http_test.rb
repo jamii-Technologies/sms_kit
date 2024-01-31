@@ -8,7 +8,7 @@ class MockProvider < ExampleProvider
   end
 end
 
-class HttpTest < MiniTest::Test
+class HttpTest < Minitest::Test
 
   def setup
     @default = ExampleProvider.new
