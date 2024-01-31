@@ -6,7 +6,6 @@ if ENV['COV']
 end
 
 require 'minitest/autorun'
-require 'pry'
 require 'vcr'
 require 'sms_kit'
 require 'logger'
